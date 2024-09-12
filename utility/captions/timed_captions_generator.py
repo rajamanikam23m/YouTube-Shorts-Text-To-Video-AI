@@ -1,4 +1,4 @@
-''' import whisper_timestamped as whisper
+import whisper_timestamped as whisper
 from whisper_timestamped import load_model, transcribe_timestamped
 import re
 
@@ -68,4 +68,4 @@ def getCaptionsWithTime(whisper_analysis, maxCaptionSize=15, considerPunctuation
             CaptionsPairs.append(((start_time, end_time), word))
             start_time = end_time
 
-    return CaptionsPairs '''
+    return CaptionsPairs
