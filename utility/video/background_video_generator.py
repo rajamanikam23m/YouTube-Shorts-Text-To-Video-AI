@@ -24,7 +24,7 @@ def search_videos(query_string, orientation_landscape=False):
     return json_data
 
 
-def getBestVideo(query_string, orientation_landscape=True, used_vids=[]):
+def getBestVideo(query_string, orientation_landscape=False, used_vids=[]):
     vids = search_videos(query_string, orientation_landscape)
     videos = vids['videos']  # Extract the videos list from JSON
 
@@ -60,7 +60,7 @@ def generate_video_url(timed_video_searches,video_server):
                 url = ""
                 for query in search_terms:
                   
-                    url = getBestVideo(query, orientation_landscape=True, used_vids=used_links)
+                    url = getBestVideo(query, orientation_landscape=False, used_vids=used_links)
                     if url:
                         used_links.append(url.split('.hd')[0])
                         break
